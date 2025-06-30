@@ -27,7 +27,8 @@ Manage your ressources!
 Use your everyday GPU job queue or execute the `docker-compose up -d` for each participant directory consecutively with a script. Assuming each submission is in its own directory under `submissions/`, you can use the  
 [PhaKIR Execution Script](../Phakir/evaluation/Inferenz/execute.py).
 
-> [!WARNING] Dealing with Errors
+> [!WARNING] 
+>Dealing with Errors:
 > Currently there is no feedback to the participant during this process. They will not get informed if an error occurs. If the output directory stays empty, you should forward the dc.log file (e.g., email or Gitea issue) to the participant so they have to debug their submission.
 We encountered issues where participants’ Docker containers failed (due to bugs, missing files, etc.) . Our solution during the challenge was to manually check the container logs and inform the team of the problem – a very timeconsuming process.
 
