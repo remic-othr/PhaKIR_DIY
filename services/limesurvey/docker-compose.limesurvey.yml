@@ -1,0 +1,26 @@
+services:
+  limesurvey-app:
+    image: docker.io/martialblog/limesurvey:latest
+    container_name: limesurvey-app
+    restart: always
+    env_file:
+      - limesurvey.env
+    depends_on:
+      - limesurvey-db
+    networks:
+      - proxy-net
+      - backend
+
+  limesurvey-db:
+    image: docker.io/mysql:latest
+    container_name: limesurvey-db
+    env_file:
+      - limesurvey.env
+    networks:
+      - backend
+
+networks:
+  proxy-net:
+    external: true
+  backend:
+    internal: true

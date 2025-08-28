@@ -35,13 +35,14 @@ need for separate logins for each service. Centralized SSO also reduces admin ov
 &rarr; [Deploy Authentik](../services/authentik/README.md)
 
 
-## Data Hosting and Distribution (MinIO, Gokapi, SFTP)
-Challenges involve large datasets. We need a way to store these files on the server and allow participants to download them securely. Additionally, we may need to accept large result files from participants (if code submission is not used). Our setup uses a combination of MinIO (for object storage) and optionally Gokapi or SFTP for data distribution.
+## Data Hosting and Distribution (Garage, Gokapi, SFTP)
+Challenges involve large datasets. We need a way to store these files on the server and allow participants to download them securely. Additionally, we may need to accept large result files from participants (if code submission is not used). Our setup uses a combination of Garage (for object storage) and optionally Gokapi or SFTP for data distribution.
 
-#### MinIO for Object Storage
- We recommend using MinIO as a self-hosted S3-compatible storage solution. MinIO will store the challenge data (e.g. images, annotations, etc.) in a scalable way. It runs well in Docker and can handle large volumes of data efficiently. 
+#### Garage for Object Storage
+ We recommend using Garage as a self-hosted S3-compatible storage solution. Garage will store the challenge data (e.g. images, annotations, etc.) in a scalable way. It runs well in Docker and can handle large volumes of data efficiently.
+ Former we used MinIO, [but they removed a lot of their open-source features](https://github.com/minio/object-browser/pull/3509). 
 
-&rarr; [Deploy MinIO](../services/minio/) 
+&rarr; [Deploy Garage](../services/garage/) 
 
 
 #### Data Distribution to Participants
@@ -56,7 +57,7 @@ If you have legal requirements (e.g. users must sign an
 agreement), you can implement a registration approval workflow in Authenitk (as we did) before giving them Gokapi access.
 
 Always communicate clearly on the challenge website or email when new data is available.
-In summary, MinIO serves as the backend storage for all challenge data , while Gokapi is a frontend for participants to retrieve files securely. This separation ensures you keep control over the master data, and participants only get what they need in a controlled manner.
+In summary, Garage serves as the backend storage for all challenge data , while Gokapi is a frontend for participants to retrieve files securely. This separation ensures you keep control over the master data, and participants only get what they need in a controlled manner.
 
 
 
@@ -169,4 +170,8 @@ releases, deadline changes) on the site’s blog section – totaling 18 updates
 – and also emailed these to participants. Consistent communication is key , so plan who will
 handle writing updates. WordPress makes it easy to create posts for these announcements.
 
-&rarr; with all components set up (domain/proxy, Authentik, MinIO, Gokapi, CVAT, Gitea, WordPress), let’s walk through how a [participant experiences the platform from start to finish](./PARTICIPANT_WORKFLOW.md)
+&rarr; with all components set up (domain/proxy, Authentik, Garage, Gokapi, CVAT, Gitea, WordPress), let’s walk through how a [participant experiences the platform from start to finish](./PARTICIPANT_WORKFLOW.md)
+
+## Feedback
+Feedback is always good. You can send a survey to your participants after the challenge to learn what worked well and what could be improved. This helps refine the platform for future challenges. 
+&rarr; [Deploy Limesurvey](../services/limesurvey/)

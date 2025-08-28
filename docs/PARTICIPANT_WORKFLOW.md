@@ -77,7 +77,9 @@ implement that. In our scenario, we did not provide a live leaderboard or immedi
 final results were given after the challenge closed . However, you may choose to give partial
 feedback or validation error messages (for instance, if a submission fails to run, you could
 inform the team so they know there was an issue).
-Challenge Conclusion: After evaluation, results are typically announced on the website and via
+
+**Challenge Conclusion**
+After evaluation, results are typically announced on the website and via
 email. The WordPress site can display the leaderboard (which you manually input or generate
 from the evaluation results). Accounts can be left active for a period or deactivated after the
 challenge ends (we turned off access to services when the competition was over) . This is
@@ -87,10 +89,9 @@ Throughout this timeline, having an admin checklist is useful. For example, when
 did they upload the agreement? Did we activate their account? When data is released, did we grant all
 active users access? This ensures smooth operations.
 The participant workflow above shows how the pieces come together: Authentik handles account
-creation and login, WordPress is the info portal and entry point, data flows through MinIO to SFTP/
+creation and login, WordPress is the info portal and entry point, data flows through Garage to SFTP/
 Gokapi to participants, development happens offline with support via forums or Gitea issues, and
 submissions come back through Gitea (or upload) to be evaluated.
 
 
-Next, we will detail the evaluation process implementation, which is the “hero moment” where
-everything gets tested. &rarr; [Automated Evaluation with Docker and Python](./EVALUATION.md)
+“Next, we will describe the implementation of the evaluation process, which represents the critical stage where all components are rigorously tested.&rarr; [Automated Evaluation with Docker and Python](./EVALUATION.md)

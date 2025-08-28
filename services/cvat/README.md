@@ -11,17 +11,26 @@ This service is used primarily by **data providers** and **organizers** to:
 
 ## Setup
 
-- Fill out the `cvat.env.template` file with your settings and secrets, then rename it to `cvat.env`.
+CVAT is a little more complicated because its configuration expects traefik as a reverse proxy. I have adapted the docker-compose file so that it works with the Nginx Proxy Manager. However, the reverse proxy settings must also be transferred.
+
+The official CVAT Docker Compose file can be found [here](https://github.com/cvat-ai/cvat/blob/develop/docker-compose.yml). In this directory, you will find the customized `docker-compose.cvat.yml` file.
+
+- Fill out the `.env` file with your settings.
 
 - Start the container via:
 
     ```bash
     docker compose -f docker-compose.cvat.yml up -d
     ```
-- Access its web console via Nginx Proxy Manager by creating a host like `cvat.example.org` forwarding to `cvat:8080`.
+
+- Nginx Proxy Manager settings:
+    - forward a host like `cvat.example.org` to `cvat_ui:80`
+    - Websockets support enabled
+    - Add custom location rules for `/api/`, `/analytics/`, `admin/`, `/static/`, `/documentation/`, `/git/`, `/opencv/` and `/django-rq/` to point to `cvat_server:8080`
 
 
-CVAT supports **OIDC/OAuth2 login**, and is integrated into this infrastructure using **Authentik** as identity provider.
+
+(untested) CVAT supports **OIDC/OAuth2 login**, and is integrated into this infrastructure using **Authentik** as identity provider.
 - Redirect URI: `https://cvat.example.org/auth/cvat/login/callback`
 - Client Type: `confidential`
 - Scopes: `openid email profile`

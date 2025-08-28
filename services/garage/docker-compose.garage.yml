@@ -1,0 +1,17 @@
+version: "3"
+services:
+  garage:
+    image: dxflrs/garage:v2.0.0
+    networks:
+      - public-net
+    restart: unless-stopped
+    environment:
+      GARAGE_CONFIG: ./garage.toml
+    volumes:
+      - ./garage.toml:/etc/garage.toml
+      - ./meta:/var/lib/garage/meta
+      - ./data:/var/lib/garage/data
+
+networks:
+  public-net:
+    external: true

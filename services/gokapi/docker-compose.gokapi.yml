@@ -1,0 +1,19 @@
+services:
+  gokapi:
+    image: f0rc3/gokapi:latest
+    container_name: gokapi
+    env_file:
+      - ./gokapi.env
+    volumes:
+      - gokapi-data:/app/data
+      - ./gokapi-config:/app/config
+    restart: always
+    networks:
+      - proxy-net
+
+volumes:
+  gokapi-data:
+
+networks:
+  proxy-net:
+    external: true

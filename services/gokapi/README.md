@@ -20,18 +20,20 @@ To run the service:
 ```bash
 docker compose -f docker-compose.gokapi.yml up -d
 ```
-Access its web console via Nginx Proxy Manager by creating a host like `download.example.org` forwarding to `gokapi:8080`.
+Access its web console via Nginx Proxy Manager by creating a host like `download.example.org` forwarding to `gokapi:53842`.
 
-Once running, access it via: `https://download.example.org`
+Once running, access it via: `https://download.example.org/setup/`
 
 Use the web interface to:
 - Set expiry time (optional)
 - Generate a download link with or without password/token
 
-Recommentation: Use s3 minio storage for persistence, as described in the [MinIO service documentation](../minio/README.md).
+Recommentation:
+- Use s3 minio storage for persistence, as described in the [MinIO service documentation](../minio/README.md).
 Otherwise: If you want to use the default local storage, ensure the `gokapi` container has a volume mounted at `/data` to upload files.
+- Use group based (admin) oauth authentication via Authentik to restrict access to the admin web UI.
 
-## Authentication via Authentik
+## User Authentication via Authentik
 Gokapi does not require user authentication by default, but you can secure it using Authentik outposts:
 1. Set up a **Proxy Provider** in Authentik with:
    - Redirect URI: `https://download.example.org/outpost.goauthentik.io/*`

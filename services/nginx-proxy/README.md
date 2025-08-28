@@ -31,7 +31,6 @@ docker compose -f docker-compose.nginx.yml up -d
 Access the NPM management UI at `http://<your-server-ip>:81` and log in (default credentials are usually admin@example.com /
 changeme ; you will be prompted to change them). From the dashboard, you can start adding Proxy
 Host entries for each service in your platform.
-Start with an Entry for your NPM instance itself (`http://localhost:8181`)
 
 #### Configure Proxy Hosts and SSL:
 Nginx would be fully automatable, but it does not have a web GUI. 
@@ -51,6 +50,9 @@ For each service (Authentik, MinIO, CVAT, Gitea, WordPress, etc.), decide on a s
 3. Save
 
 Repeat for all services. Make sure the NPM container can resolve the internal service names via Docker network.
+Start with an Entry for your NPM instance itself (`http://localhost:81`)
+
+We created a special internal docker network to allow NPM to resolve the internal service names and not expose them to the public internet. This is defined in the `docker-compose.nginx.yml` file.
 
 NPM will automatically perform the ACME challenge and fetch a certificate for your domain. Ensure port 80 is
 accessible for the HTTP challenge. Once added, NPM will route HTTPS traffic for that subdomain to the

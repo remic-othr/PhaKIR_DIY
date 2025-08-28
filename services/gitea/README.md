@@ -45,7 +45,7 @@ All uploaded files and attachments are stored via MinIO (S3):
 ```ini
 [storage]
 STORAGE_TYPE = minio
-MINIO_ENDPOINT = storage:9000
+MINIO_ENDPOINT = garage:9000
 MINIO_ACCESS_KEY_ID = your_access_key
 MINIO_SECRET_ACCESS_KEY = your_secret_key
 MINIO_BUCKET = gitea

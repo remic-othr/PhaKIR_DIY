@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+  npm:
+    image: jc21/nginx-proxy-manager:latest
+    container_name: nginx-proxy-manager
+    restart: unless-stopped
+    ports:
+      - "80:80"      # HTTP
+      - "81:81"      # Web UI
+      - "443:443"    # HTTPS
+    volumes:
+      - npm_data:/data
+      - npm_letsencrypt:/etc/letsencrypt
+    networks:
+      - proxy-net
+      - public-net
+
+networks:
+  proxy-net:
+    name: proxy-net
+    driver: bridge
+    internal: true
+  public-net:
+    name: public-net
+    driver: bridge
+
+volumes:
+  npm_data:
+  npm_letsencrypt:

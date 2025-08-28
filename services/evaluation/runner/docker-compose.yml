@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  runner:
+    container_name: phakir-runner
+    image: gitea/act_runner:0.2.10
+    restart: unless-stopped
+    environment:
+      - GITEA_RUNNER_NAME=phakir-runner
+      # - GITEA_RUNNER_LABELS=ubuntu-22.04:docker://node:16-bullseye
+      - GITEA_RUNNER_REGISTRATION_TOKEN=${GITEA_RUNNER_REGISTRATION_TOKEN}
+      - GITEA_INSTANCE_URL=https://submission.domain.de/
+      - GITEA_RUNNER_DOCKER_NETWORK_MODE=bridge
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./runner:/runner
+      - ./config.yaml:/config.yaml:ro
+      - ./data:/data

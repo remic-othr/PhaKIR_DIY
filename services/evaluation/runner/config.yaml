@@ -1,0 +1,12 @@
+log:
+  level: info
+
+runner:
+  capacity: 2
+  # optional:
+  # labels:
+  #   - "ubuntu-22.04:docker://node:16-bullseye"
+
+container:
+  network: bridge
+  workdir_parent: /data/_work

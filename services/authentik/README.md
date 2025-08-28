@@ -1,5 +1,5 @@
 
-# 🔐 Authentik – Identity and Access Management for DIY Challenges
+# Authentik – Identity and Access Management for DIY Challenges
 
 **Authentik** is a contemporary identity and access management (IAM) system built on open standards such as OAuth2 and OpenID Connect (OIDC). In the context of a biomedical image analysis challenge, Authentik enables:
 
@@ -20,7 +20,7 @@ Based on the stakeholder roles described in the paper, we suggest the following 
 | **Participant** | Access to own submissions and data         | Data download, submission uploads                             |
 | **Data Provider** | Creation and management of annotations | Access to CVAT, annotation creation, quality control          |
 
-> See detailed "Stakeholder-Roles" in the paper (section 2.1).
+>[!NOTE] See detailed "Stakeholder-Roles" in the paper (section 2.1).
 
 ---
 
@@ -29,11 +29,11 @@ Based on the stakeholder roles described in the paper, we suggest the following 
 ### Step 1: Install latest Authentik Docker Compose Setup
 
 The latest Authentik version can be set up using Docker Compose. Follow the official documentation for installation:
-[Docker Compose Setup](https://goauthentik.io/docs/installation/docker-compose)
+[Docker Compose Setup](https://docs.goauthentik.io/docs/install-config/install/docker-compose/)
 
-Otherwise you can use the provided `docker-compose.authentik.yml` file in this repository:
+Otherwise you can use the provided `docker-compose.authentik.yml` file in this repository. This file is pre-configured for our nginx proxy setup and has all configurations in the env file.
 
-- Fill the env file with your settings and secrets and rename it (`authentik.env.template` to `authentik.env`).
+- Fill the env file with your values and secrets and rename it (`authentik.env.template` to `authentik.env`).
 - Start Authentik with the following command:
   ```bash
   docker compose -f docker-compose.authentik.yml up -d
@@ -48,18 +48,20 @@ Follow the documentation to set up Nginx Proxy Manager:
 After setting up Nginx Proxy Manager, configure a new proxy host for Authentik via the GUI.
 
 - **Domain**: e.g. `auth.example.org`
-- **Forward IP / Port**: `authentik:9000` (assuming Docker network)
+- **Forward IP / Port**: `authentik:9000` (check the container name of the authentik server with `docker ps`)
 - **Scheme**: `http`
 - Enable **SSL** (Let’s Encrypt), **Force SSL**, and **HTTP/2**
+- Enable **Websockets**!.
 
 Your Authentik instance is now securely available via HTTPS through Nginx Proxy Manager.
 
 ### Step3: Initialization
-- Access `https://auth.example.org`. The setup wizard will prompt you to create an
+- Access `https://auth.example.org/if/flow/initial-setup/`. The setup wizard will prompt you to create an
 admin user.
 - Enable email settings if you want Authentik to send verification emails (configure SMTP).
 - Consider enabling selfservice registration so participants can sign up on their own. Authentik supports flexible user flows – in
 our case, we allowed self-registration but with a manual approval step (more on that in the workflow section).
+> [!Tip] Take your time to explore Authentik’s documentation and features. It's worth understanding the concept.
 
 ### Step 4: Define Roles and Groups
 Authentik will be the source of truth for user identities. 
@@ -76,10 +78,10 @@ for admin accounts. Also generate a strong secret key for Authentik. With Authen
 secure IAM foundation for the challenge platform.
 
 ### Step 5: User Registration and Approval Workflow
-
-- Activate self-service registration ([Self-Service Guide](https://goauthentik.io/docs/flows/self-service/)).
+- Activate self-service registration.
 - Define an admin approval flow for manual validation after receiving signed user agreements (Data Agreements).
-- TODO: vielleicht n paar mehr infos zu unseren Flows /Skripten, etc.
+
+Have a look how we implented the [enrollment](./enrollment/).
 
 ### Step 6: Integrate Authentik with Platform Services
 
@@ -106,7 +108,8 @@ redirected to Authentik to log in. Similarly, for WordPress, install a plugin su
 
 ### Step 7: Legal Compliance
 - Ensure users agree to the challenge rules and data usage terms during registration.
-...TODO: Link to CaseStudy Infos: EndoVis Rules
+
+Have a look at our [additional documents](/PhaKIR/).
 
 ---
 
@@ -132,6 +135,6 @@ redirected to Authentik to log in. Similarly, for WordPress, install a plugin su
 - **Explicit Consent**: Users must actively consent to data and usage terms.
 - **Audit Logging**: Maintain comprehensive logs of user activities for auditing purposes.
 
-> See especially "Infrastructure Requirements" and "IAM Lifecycle" in the paper for further details.
+>[!NOTE] See especially "Infrastructure Requirements" and "IAM Lifecycle" in the paper for further details.
 
 
