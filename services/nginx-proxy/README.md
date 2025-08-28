@@ -1,5 +1,5 @@
 
-# 🧭 NGINX Proxy Manager (NPM)
+# NGINX Proxy Manager (NPM)
 
 This service acts as the central reverse proxy and TLS termination point for the entire DIY Challenge infrastructure.
 It allows incoming HTTPS traffic to be routed to internal services like:

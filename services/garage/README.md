@@ -5,7 +5,7 @@
 
 > In the PhaKIR challenge we originally relied on MinIO, but since the discontinuation of its open-source edition, **Garage** has become a strong and reliable alternative.
 
-Garage runs as a Docker container, reverse-proxied via [NPM](\services\nginx-proxy), and secured with SSO authentication for admin access through [Authentik](\services\authentik).
+Garage runs as a Docker container, reverse-proxied via [NPM](/services/nginx-proxy/), and secured with SSO authentication for admin access through [Authentik](/services/authentik/).
 
 ### Key Features
 
@@ -92,7 +92,7 @@ Garage is mainly for organizers’ use to manage and store data.
 
 ## Authentication via Authentik
 
-To secure access:
+To secure access for the Garage web UI, we integrate it with Authentik using an **Authentik Outpost**.:
 
 1. Set up a **Proxy Provider** in Authentik with:
    - Redirect URI: `https://storage.example.org/outpost.goauthentik.io/*`
@@ -163,7 +163,5 @@ CVAT_S3_REGION=us-east-1
 
 ## References
 
-- [MinIO Documentation](https://min.io/docs/)
-- [Authentik Proxy Setup](https://goauthentik.io/docs/providers/proxy/)
-- [S3 CORS Configuration](https://docs.min.io/docs/minio-server-cors-support.html)
-- [PhaKIR Challenge Infrastructure Paper](https://doi.org/10.1007/978-3-031-49977-2_21)
+- [Garage Documentation](https://garagehq.deuxfleurs.fr/documentation/quick-start/)
+- [Authentik Outpost Setup](https://docs.goauthentik.io/add-secure-apps/outposts/)

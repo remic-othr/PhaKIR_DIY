@@ -1,5 +1,5 @@
 
-# 📰 WordPress – Challenge Information Portal
+# WordPress – Challenge Information Portal
 
 [WordPress](https://wordpress.org/) is used in this infrastructure as a **flexible content management system (CMS)** to present and manage all publicly accessible challenge information.
 
@@ -71,11 +71,8 @@ The platform uses the following curated set of plugins:
 - **XCloner / All-in-One WP Migration** – Backup and restore
 - **Sticky Menu**, **SVG Support**, **Duplicate Page**, etc. – Minor UI helpers
 
-A complete list with purpose is available in [`wordpress_plugins_README.md`](../wordpress_plugins_README.md).
-
 ## References
 
 - [WordPress.org](https://wordpress.org/)
 - [OpenID Connect Plugin](https://wordpress.org/plugins/daggerhart-openid-connect-generic/)
-- [Authentik OAuth2 Docs](https://goauthentik.io/docs/providers/oauth2/)
-- [PhaKIR Challenge Infrastructure Paper](https://doi.org/10.1007/978-3-031-49977-2_21)
+- [Authentik OAuth2 Docs](https://docs.goauthentik.io/add-secure-apps/providers/oauth2/)

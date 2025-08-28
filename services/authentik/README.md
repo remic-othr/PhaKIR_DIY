@@ -78,18 +78,20 @@ for admin accounts. Also generate a strong secret key for Authentik. With Authen
 secure IAM foundation for the challenge platform.
 
 ### Step 5: User Registration and Approval Workflow
+
+>[!TIP] Instead of taking care of user authentikcation you can use common provicders like Github for authentication if you like so. This is supported by Authentik.
+
 - Activate self-service registration.
 - Define an admin approval flow for manual validation after receiving signed user agreements (Data Agreements).
-
 Have a look how we implented the [enrollment](./enrollment/).
 
 ### Step 6: Integrate Authentik with Platform Services
 
 We will use Authentik as the OAuth2 provider for our other services:
 - WordPress: Use an [WordPress OAuth Plugin](https://wordpress.org/plugins/daggerhart-openid-connect-generic/) on WordPress to delegate login to Authentik.
-- [Gitea](https://docs.gitea.com/usage/oauth2-provider): Gitea has built-in OAuth2/OIDC authentication; we’ll register Authentik as a provider.
+- [Gitea](https://docs.gitea.com/development/oauth2-provider): Gitea has built-in OAuth2/OIDC authentication; we’ll register Authentik as a provider.
 - Others
-(optional): If possible, integrate CVAT and other tools with SSO: [CVAT OIDC](https://opencv.github.io/cvat/docs/administration/advanced/oidc/ )
+(optional): If possible, integrate CVAT and other tools with SSO: [CVAT OIDC](https://docs.cvat.ai/docs/enterprise/sso/#auth0)
  If a service doesn’t support external auth, Authentik can protect it via a proxy (Authentik has an embedded outpost feature to act as a forward-auth agent).
 
 To set up an OAuth app in Authentik for a service, you typically do the following in Authentik: 
@@ -120,11 +122,10 @@ Have a look at our [additional documents](/PhaKIR/).
 
 | Topic                          | Documentation Link                                    |
 |--------------------------------|-------------------------------------------------------|
-| **Authentik Documentation**    | [Authentik Docs](https://goauthentik.io/docs/)        |
-| **Docker Compose Example**     | [Docker Compose Setup](https://goauthentik.io/docs/installation/docker-compose) |
-| **OAuth2 Provider**            | [OAuth2 Provider Guide](https://goauthentik.io/docs/providers/oauth2/) |
-| **Self-Service Registration**  | [Self-Service Registration](https://goauthentik.io/docs/flows/self-service/) |
-| **Flows and Policies**         | [Authentik Flows](https://goauthentik.io/docs/flows/) |
+| **Authentik Documentation**    | [Authentik Docs](https://docs.goauthentik.io/)        |
+| **Docker Compose Example**     | [Docker Compose Setup](https://docs.goauthentik.io/install-config/install/docker-compose/) |
+| **OAuth2 Provider**            | [OAuth2 Provider Guide](https://docs.goauthentik.io/add-secure-apps/providers/oauth2/) |
+| **Flows and Policies**         | [Authentik Flows](https://docs.goauthentik.io/add-secure-apps/flows-stages/flow/) |
 
 ---
 

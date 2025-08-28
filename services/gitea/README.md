@@ -79,6 +79,4 @@ As defined in the infrastructure blueprint, Gitea:
 ## References
 
 - [Gitea Docs](https://docs.gitea.io/)
-- [Gitea Docker Registry](https://docs.gitea.io/en-us/packages/#docker-container-registry)
-- [Authentik OAuth2 Setup](https://goauthentik.io/docs/providers/oauth2/)
-- [PhaKIR Infrastructure Paper](https://doi.org/10.1007/978-3-031-49977-2_21)
+- [Gitea Docker Registry](https://docs.gitea.com/usage/packages/container)

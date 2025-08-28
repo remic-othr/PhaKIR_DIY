@@ -14,7 +14,6 @@ Each submission, once evaluated, sends its results to MLflow as a tracked run. T
 - Allow organizers to identify winners based on selected metrics
 - Provide optional **real-time leaderboard** via UI or API
 
----
 
 ## Usage
 Adjust the .env file to and configure the s3 storage backend [Garage}(../garage/) 
@@ -32,7 +31,7 @@ https://mlflow.example.org
 ```
 
 Seucre access via Authentik by setting up a Proxy Provider and Outpost as described in the [Authentik documentation](https://goauthentik.io/docs/providers/proxy/).
----
+
 
 ## Integration Flow (idea, not tested)
 
@@ -41,7 +40,6 @@ Seucre access via Authentik by setting up a Proxy Provider and Outpost as descri
 3. Metrics are sent to MLflow via Python API. See in [evaluation](/services/evaluation/inference/).
 4. Organizers can view and compare submissions in the web UI
 
----
 
 ## Optional: Public Live Leaderboard via `/leaderboard.json`
 > [!CAUTION] Untested, idea only
@@ -52,7 +50,7 @@ Enable a transparent, real-time leaderboard by implementing a lightweight API en
 
 1. **Retrieve Top Runs Using MLflow's REST API**  
    Query MLflow's REST endpoint (`/api/2.0/mlflow/runs/search`) to fetch runs for a specific experiment, sorted by a performance metric like accuracy or Dice score.  
-   This method leverages MLflow's native tracking capabilities for filtered and ordered run retrieval. ([mlflow.org](https://mlflow.org/docs/latest/tracking/), [mlflow.org](https://mlflow.org/docs/latest/ml/tutorials-and-examples/))
+   This method leverages MLflow's native tracking capabilities for filtered and ordered run retrieval. 
 
 2. **Build a Simple API Layer (e.g., Flask or FastAPI)**  
    Create an endpoint that:
@@ -105,4 +103,4 @@ Enable a transparent, real-time leaderboard by implementing a lightweight API en
 - [MLflow Docs](https://mlflow.org/docs/latest/index.html)
 - [Tracking API](https://mlflow.org/docs/latest/tracking.html)
 - [REST API Reference](https://mlflow.org/docs/latest/rest-api.html)
-- [PhaKIR Infrastructure Paper](https://doi.org/10.1007/978-3-031-49977-2_21)
+

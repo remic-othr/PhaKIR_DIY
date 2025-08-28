@@ -13,11 +13,11 @@ When a participant indicates they have submitted (for instance, by pushing to th
 
 Therefore a docker-compose file is generated that pulls their Docker image from the Gitea registry.
 
-> See the [PhaKIR Preparation Script](../Phakir/services/evaluation/prepare) for an example. Adapt the `docker-compose.yml.template` to fit your challenge boundaries, such as resource limits (CPU, memory, GPU) and the input/output directories.
+> See the [PhaKIR Preparation Script](/services/evaluation/prepare) for an example. Adapt the `docker-compose.yml.template` to fit your challenge boundaries, such as resource limits (CPU, memory, GPU) and the input/output directories.
 
 This script can be run manually or by a webhook - using a continuous integration approach from Gitea - when a new submission is made.
 
-> See the [PhaKIR CI Runner](../Phakir/evaluation/runner/) for an idea.
+> See the [PhaKIR CI Runner](/services/evaluation/runner/) for an idea.
 
 **Alternative simple approach**: Have a cron job or loop that checks for new submissions every X minutes via the Gitea API. - When found, download the Docker image. With Gitea’s registry, this is just a docker pull git.your-challenge.org/username/submission_repo:tag.
 

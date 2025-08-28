@@ -29,7 +29,7 @@ Use the web interface to:
 - Generate a download link with or without password/token
 
 Recommentation:
-- Use s3 minio storage for persistence, as described in the [MinIO service documentation](../minio/README.md).
+- Use s3 garage storage for persistence, as described in the [Garage service documentation](../garage/).
 Otherwise: If you want to use the default local storage, ensure the `gokapi` container has a volume mounted at `/data` to upload files.
 - Use group based (admin) oauth authentication via Authentik to restrict access to the admin web UI.
 
@@ -55,7 +55,7 @@ This separation ensures clear auditability and security for both directions of d
 ### Security Notes
 
 - Gokapi has **no user authentication**. Downloads can optionally be protected by passwords or tokens.
-- **Reverse proxying via NGINX is required** – especially when using an [Authentik Outpost](https://goauthentik.io/docs/providers/proxy/) to protect access.
+- **Reverse proxying via NGINX is required** – especially when using an [Authentik Outpost](https://docs.goauthentik.io/add-secure-apps/outposts/) to protect access.
 - TLS termination (HTTPS) and routing are handled entirely via the proxy layer.
 
 ---
