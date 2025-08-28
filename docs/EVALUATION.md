@@ -34,7 +34,6 @@ This allows you to share the leaderboard on your wordpress site.
 > [!NOTE]  
 > Keep in mind live leaderboards can motivate participants but also risk encouraging test data overfitting if used improperly. It’s a design choice.
 
-
 In the PhaKIR casestudy, we used a Python script that reads the output files and compares them to the ground truth data (the hidden test set) and logged the metrics manually.
 This script will not be published, as it is tailored to the specific tasks of the PhaKIR challenge; you will implement whatever metrics are appropriate and produce scores. We took care to use standardized metrics definitions to ensure fairness.
 

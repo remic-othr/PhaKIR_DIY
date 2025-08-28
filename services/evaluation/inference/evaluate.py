@@ -4,7 +4,7 @@ import time
 from pathlib import Path
 import mlflow
 
-# Configure MLflow experiment
+# Configure MLFlow experiment
 mlflow.set_experiment("Submission_Evaluation")  # creates or uses an experiment
 
 # Paths configuration
@@ -64,7 +64,7 @@ for submission_path in SUBMISSIONS_DIR.iterdir():
         metrics = calculate_metrics(output_dir, GROUND_TRUTH_DIR)
         print(f"Metrics for {submission_name}: {metrics}")
 
-    # Step 3: Log metrics to MLflow (one run per submission)
+    # Step 3: Log metrics to MLFlow (one run per submission)
     mlflow.start_run(run_name=submission_name)
     # Log a tag or parameter for identification
     mlflow.log_param("submission_name", submission_name)
@@ -74,5 +74,5 @@ for submission_path in SUBMISSIONS_DIR.iterdir():
     mlflow.end_run()
 
 # After looping through submissions, you can stop here.
-# The MLflow UI will now contain an experiment with one run per submission, each with logged metrics.
-print("\nEvaluation complete. Check the MLflow UI for results.")
+# The MLFlow UI will now contain an experiment with one run per submission, each with logged metrics.
+print("\nEvaluation complete. Check the MLFlow UI for results.")

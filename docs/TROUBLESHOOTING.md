@@ -23,7 +23,7 @@ One key lesson we learned was to automate the submission verification process. S
 manually reviewing logs and guiding them. In the future, integrating an automated pre-check (e.g., a CI pipeline that tries to run each container on a small sample) would save a huge amount of time and catch errors before the deadline. We highly recommend building a “submission validator” and making it available to participants (so they can self-check) and using it as an entry filter. 
 ### Consider Live Leaderboards
 Participants appreciate timely feedback. We initially planned only a final evaluation, but
-some requested a live ranking during the challenge. Implementing a public leaderboard that updates (either continuously or at certain intervals) can increase engagement. If doing so, one way is to have the evaluation script push scores to MLFlow that can be embedded intop the WordPress site. This needs careful handling to avoid revealing too much (you might show ranks or partial info to avoid overfitting to the test set).
+some requested a live ranking during the challenge. Implementing a public leaderboard that updates (either continuously or at certain intervals) can increase engagement. If doing so, one way is to have the evaluation script push scores to MLflow that can be embedded intop the WordPress site. This needs careful handling to avoid revealing too much (you might show ranks or partial info to avoid overfitting to the test set).
 ### Scalability
 Our framework was modular and could handle the
 participants we had, but if your challenge scales to hundreds of participants, be mindful of load: 
