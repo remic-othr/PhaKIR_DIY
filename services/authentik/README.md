@@ -75,14 +75,13 @@ setup, Authentik was used for all services except perhaps the data collection in
 authentication makes it easier to deactivate a user’s access entirely at the end of the challenge or if
 issues arise.
 
-Tip: Make use of Authentik’s security features like password policies and multi-factor authentication
-for admin accounts. Also generate a strong secret key for Authentik. With Authentik in place, we have a
-secure IAM foundation for the challenge platform.
+>[!TIP]
+> Make use of Authentik’s security features like password policies and multi-factor authentication for admin accounts. Also generate a strong secret key for Authentik. With Authentik in place, we have a secure IAM foundation for the challenge platform.
 
 ### Step 5: User Registration and Approval Workflow
 
->[!TIP]
->Instead of taking care of user authentikcation you can use common provicders like Github for authentication if you like so. This is supported by Authentik.
+>[!NOTE]
+>Instead of taking care of user authentication you can use common provicders like Github for authentication if you like so. This is supported by Authentik.
 
 - Activate self-service registration.
 - Define an admin approval flow for manual validation after receiving signed user agreements (Data Agreements).
