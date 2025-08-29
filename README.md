@@ -15,31 +15,25 @@ Organizing a challenge is hard. This blueprint turns it into a reproducible proc
 - 📖 **Educational:** Step-by-step docs that link like chapters.  
 - 🌍 **Community-driven:** Open for pull requests and improvements.
 
----
-
 > [!NOTE]  
 > Planning your own challenge? Add your experience!  
 > Open a pull request and help the DIY Blueprint grow.  
 > ⭐ Star this repository to stay updated.
 
----
 
 ## Get Started
 
 Follow the docs step by step — each one links to the next:
 
 1. 📄 Read the [DIY Challenge Blueprint Paper](missing doi) for full background.  
-2. 🏗️ Check the [DIY Overview](docs/DIY.md) for architecture and components.  
-3. 🔄 Learn the [Participant Workflow](docs/PARTICIPANT_WORKFLOW.md).  
-4. ⚙️ Explore the [Services](services/README.md) to see what powers the blueprint.
+2. 🏗️ Check the [DIY Overview](docs/DIY.md) for architecture and components and explore the [Services](services/) to see what powers the blueprint.
+3. 🔄 Learn about the [Participant Workflow](docs/PARTICIPANT_WORKFLOW.md) and the [Evaluation](docs/EVALUATION.md).  
 
----
 
 ## Additional Resources
 - 🔒 [Security](docs/SECURITY.md) — How we handle authentication and data protection.  
 - 🛠️ [Troubleshooting](docs/TROUBLESHOOTING.md) — Common pitfalls and fixes.  
 
----
 
 ## Contribute
 This project is meant to evolve. If you’ve hosted a challenge, found an issue, or built an extension — contribute back. Together we make challenge hosting more reproducible and accessible.
