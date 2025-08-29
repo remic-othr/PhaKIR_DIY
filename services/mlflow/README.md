@@ -42,7 +42,8 @@ Seucre access via Authentik by setting up a Proxy Provider and Outpost as descri
 
 
 ## Optional: Public Live Leaderboard via `/leaderboard.json`
-> [!CAUTION] Untested, idea only
+> [!CAUTION] 
+> Untested, idea only
 
 Enable a transparent, real-time leaderboard by implementing a lightweight API endpoint (e.g., `/leaderboard.json`) that fetches top-performing submissions from MLflow and serves them in structured JSON format.
 

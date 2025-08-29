@@ -20,7 +20,8 @@ Based on the stakeholder roles described in the paper, we suggest the following 
 | **Participant** | Access to own submissions and data         | Data download, submission uploads                             |
 | **Data Provider** | Creation and management of annotations | Access to CVAT, annotation creation, quality control          |
 
->[!NOTE] See detailed "Stakeholder-Roles" in the paper (section 2.1).
+>[!NOTE]
+> See detailed "Stakeholder-Roles" in the paper (section 2.1).
 
 ---
 
@@ -61,7 +62,8 @@ admin user.
 - Enable email settings if you want Authentik to send verification emails (configure SMTP).
 - Consider enabling selfservice registration so participants can sign up on their own. Authentik supports flexible user flows – in
 our case, we allowed self-registration but with a manual approval step (more on that in the workflow section).
-> [!Tip] Take your time to explore Authentik’s documentation and features. It's worth understanding the concept.
+> [!TIP]
+> Take your time to explore Authentik’s documentation and features. It's worth understanding the concept.
 
 ### Step 4: Define Roles and Groups
 Authentik will be the source of truth for user identities. 
@@ -79,7 +81,8 @@ secure IAM foundation for the challenge platform.
 
 ### Step 5: User Registration and Approval Workflow
 
->[!TIP] Instead of taking care of user authentikcation you can use common provicders like Github for authentication if you like so. This is supported by Authentik.
+>[!TIP]
+>Instead of taking care of user authentikcation you can use common provicders like Github for authentication if you like so. This is supported by Authentik.
 
 - Activate self-service registration.
 - Define an admin approval flow for manual validation after receiving signed user agreements (Data Agreements).
@@ -136,6 +139,7 @@ Have a look at our [additional documents](/PhaKIR/).
 - **Explicit Consent**: Users must actively consent to data and usage terms.
 - **Audit Logging**: Maintain comprehensive logs of user activities for auditing purposes.
 
->[!NOTE] See especially "Infrastructure Requirements" and "IAM Lifecycle" in the paper for further details.
+>[!NOTE]
+> See especially "Infrastructure Requirements" and "IAM Lifecycle" in the paper for further details.
 
 

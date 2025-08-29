@@ -1,5 +1,5 @@
 
-# 📦 Gokapi – Challenge Data Download Portal
+# Gokapi – Challenge Data Download Portal
 
 [Gokapi](https://github.com/Forceu/Gokapi) is used in this infrastructure as a **lightweight, temporary download portal** to distribute datasets and resources to registered participants.
 
