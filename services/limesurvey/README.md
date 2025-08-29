@@ -8,7 +8,8 @@
 - **Conditional Logic**: Implement skip logic and branching to tailor the survey experience based on participant responses.
 - **Data Export**: Export survey results in various formats (CSV, Excel, SPSS) for further analysis.
 
->[!Tip] [Have a look at our survey!](/PhaKIR/survey)
+>[!TIP]
+> [Have a look at our survey!](/PhaKIR/survey)
 
 ## Setup
 To run LimeSurvey in this infrastructure, we use the official LimeSurvey Docker image with a MySQL backend.
