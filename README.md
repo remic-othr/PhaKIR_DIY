@@ -6,7 +6,7 @@ Welcome to the **reference implementation** of the DIY Challenge Blueprint — a
 This repository accompanies our paper:  
 **"DIY Challenge Blueprint: From Organization to Technical Realization in Biomedical Image Analysis"**  (DOI coming soon)
 
-If you use this repository (or parts of it), please cite the paper.
+If you use this repository (or parts of it), please cite the paper. 
 
 ## Why this repository?
 Organizing a challenge is hard. This blueprint turns it into a reproducible process — from infrastructure setup to participant workflows. Think of it as your **storybook for hosting scientific challenges**.
