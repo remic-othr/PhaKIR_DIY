@@ -5,7 +5,7 @@ This section describes a high-level workflow to automatically run each participa
 ## Running Submissions Sequentially
 Manage your ressources!
 To avoid exhausting your GPU or CPU resources, run the submissions one by one (consecutively) instead of all at once. You can either use your existing GPU job scheduling system or write a script to iterate through each submission directory. Assuming each submission resides in its own folder under a common submissions/ directory, the script can perform the following steps for each submission.
-> [!INFO]
+> [!NOTE]
 > Wait for Completion: Ensure the container finishes before moving to the next submission. This can be done by running Docker in attached mode (so the docker-compose up command blocks until completion) or by running in detached mode and then polling for container status. For example, after docker-compose up -d, the script might use docker-compose ps -q to get the container ID and then call docker wait <container_id> to pause the script until that container exits. This guarantees each submission is processed one at a time, preventing resource conflicts.
 
 ### Output Comparison and Metrics Calculation
