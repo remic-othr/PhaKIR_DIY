@@ -4,7 +4,7 @@ _From Organization to Technical Realization in Biomedical Image Analysis_
 Welcome to the **reference implementation** of the DIY Challenge Blueprint — a complete guide for building, hosting, and running biomedical image analysis challenges.
 
 This repository accompanies our paper:  
-**"DIY Challenge Blueprint: From Organization to Technical Realization in Biomedical Image Analysis"**  (DOI coming soon)
+[**"DIY Challenge Blueprint: From Organization to Technical Realization in Biomedical Image Analysis"**](https://doi.org/10.1007/978-3-032-05141-7_9)
 
 If you use this repository (or parts of it), please cite the paper. 
 
