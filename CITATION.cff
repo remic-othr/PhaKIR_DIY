@@ -33,7 +33,6 @@ preferred-citation:
     given-names: "Christoph"
     orcid: "https://orcid.org/0000-0001-9468-2871"
   book-title: "Medical Image Computing and Computer Assisted Intervention – MICCAI 2025"
-  collection-title: "Lecture Notes in Computer Science"
   volume: "15970"
   start: 85
   end: 95
@@ -42,3 +41,8 @@ preferred-citation:
   year: 2026
   doi: "10.1007/978-3-032-05141-7_9"
   url: "https://link.springer.com/chapter/10.1007/978-3-032-05141-7_9"
+
+
+
+
+
