@@ -1,5 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
+type: conference-paper
 title: "DIY Challenge Blueprint: From Organization to Technical Realization in Biomedical Image Analysis"
 authors:
 - family-names: "Klausmann"
