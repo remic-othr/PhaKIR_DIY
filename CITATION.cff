@@ -1,5 +1,6 @@
 cff-version: 1.2.0
 message: Bitte zitieren Sie dieses Werk wie unten angegeben.
+type: conference-paper
 title: DIY Challenge Blueprint: From Organization to Technical Realization in Biomedical Image Analysis
 authors:
   - family-names: Klausmann
@@ -22,8 +23,6 @@ authors:
   - family-names: Palm
     given-names: Christoph
     orcid: https://orcid.org/0000-0001-9468-2871
-date-released: 2025-09-20
-identifiers:
-  - type: doi
-    value: 10.1007/978-3-032-05141-7_9
+doi: 10.1007/978-3-032-05141-7_9
 url: https://link.springer.com/chapter/10.1007/978-3-032-05141-7_9
+date-released: 2025-09-20
